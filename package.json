@@ -1,6 +1,6 @@
 {
   "name": "@ryomasao/hello-ui-package",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "typings": "dist/index.d.ts",
