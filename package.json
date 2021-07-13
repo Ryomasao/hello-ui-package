@@ -1,8 +1,9 @@
 {
   "name": "@ryomasao/hello-ui-package",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
+  "typings": "dist/index.d.ts",
   "author": "Ryomasao",
   "license": "MIT",
   "scripts": {
