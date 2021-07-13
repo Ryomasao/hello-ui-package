@@ -1,12 +1,34 @@
 {
   "name": "hello-ui-package",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
   "author": "Ryomasao",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryomasao/hello-ui-package"
+  },
+  "bugs": {
+    "url": "https://github.com/Ryomasao/hello-ui-package"
+  },
+  "homepage": "https://github.com/Ryomasao/hello-ui-package#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "rollup": "^2.53.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.3.5"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
