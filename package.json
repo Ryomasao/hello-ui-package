@@ -1,6 +1,6 @@
 {
-  "name": "hello-ui-package",
-  "version": "0.0.1",
+  "name": "@ryomasao/hello-ui-package",
+  "version": "0.0.3",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "author": "Ryomasao",
