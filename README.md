@@ -160,6 +160,25 @@ yarn build
 └── index.d.ts
 ```
 
+`files`に配布するファイルを記載。省略したら、`dist/bundle.cjs.js`のみ配布されてた。
+
+<b>package.json</b>
+
+```json
+  "files": [
+    "dist"
+  ],
+```
+
+型定義の名前が`index.d.ts`で、配布するディレクトリのrootにある場合、以下はいらないんだけど、一応書いとく。
+
+
+<b>package.json</b>
+
+```json
+  "typings": "dist/index.d.ts",
+```
+
 
 ## Publish
 
