@@ -17,6 +17,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      react: path.resolve('./node_modules/react'),
+    },
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
