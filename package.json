@@ -1,11 +1,14 @@
 {
   "name": "@ryomasao/hello-ui-package",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
   "typings": "dist/index.d.ts",
   "author": "Ryomasao",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rollup -c rollup.config.js"
   },
