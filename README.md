@@ -1,14 +1,42 @@
 # Dead Simple React UI Package with typescript
 
-## Set up React.
+React + Typescriptのパッケージ作成記録
+
+## React設定
 
 ```
 yarn init -y
 ```
 
+パッケージ名について。
+
+- パッケージ名は@組織名 or アカウント名/パッケージ名 とすることscoped packageにできる。
+- scoped packageであれば、他のパッケージと名前衝突の問題が回避できる。
+
+
+<b>package.json</b>
+
+```json
+  "name": "@ryomasao/hello-ui-package"
+```
+
+scoped packageを公開する場合、明示的にpublicにしていいよっていう設定をする必要がある。
+
+<b>package.json</b>
+
+```json
+  "publishConfig": {
+    "access": "public"
+  },
+```
+
+reactをつっこむ。peerDependenciesで。
+
 ```
 yarn add -P react react-dom 
 ```
+
+ts環境準備。
 
 ```
 yarn add -D typescript @types/react @types/react-dom
@@ -17,6 +45,8 @@ yarn add -D typescript @types/react @types/react-dom
 ```
 yarn tsc --init
 ```
+
+<b>tsconfig.json</b>
 
 ```json
 {
@@ -36,10 +66,14 @@ yarn tsc --init
 }
 ```
 
+サンプルコンポーネント準備。
+
 ```
 mkdir -p src/components
 touch src/components/Button.tsx
 ```
+
+<b>Button.tsx</b>
 
 ```tsx
 type Props = {
@@ -54,12 +88,13 @@ const Button = (props:Props) => {
 
 export default Button
 ```
-
-## Preparing the UI package bundle
+## バンドル設定
 
 ```
 yarn add -D rollup rollup-plugin-peer-deps-external rollup-plugin-typescript2 @rollup/plugin-commonjs @rollup/plugin-node-resolve rollup-plugin-terser
 ```
+
+<b>rollup.config.js</b>
 
 ```js
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
@@ -97,6 +132,10 @@ export default [
 
 ```
 
+ビルドスクリプト追加
+
+<b>package.json</b>
+
 ```json
   "scripts": {
     "build": "rollup -c rollup.config.js"
@@ -106,6 +145,8 @@ export default [
 ```
 yarn build
 ```
+
+`dist`配下に出力される。
 
 ```
 > tree
@@ -121,6 +162,9 @@ yarn build
 
 
 ## Publish
+
+- npmjsのアカウントを作成。
+- npm login でログインして、publish。
 
 ```
 npm login
